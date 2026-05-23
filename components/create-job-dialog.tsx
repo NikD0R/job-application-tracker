@@ -213,7 +213,14 @@ export default function CreateJobApplicationDialog({
                 className="cursor-pointer hover:bg-primary/90"
                 disabled={loading}
               >
-                {loading ? <Loader /> : "Add Application"}
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <Loader />
+                    <p className="ml-2">Adding Application...</p>
+                  </div>
+                ) : (
+                  "Add Application"
+                )}
               </Button>
             </DialogFooter>
           </form>

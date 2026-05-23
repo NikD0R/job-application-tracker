@@ -96,10 +96,8 @@ export default function JobApplicationCard({
       });
 
       if (result?.error) {
-        // Якщо бекенд повернув помилку, показуємо її і НЕ закриваємо форму
         setErorr(result.error);
       } else {
-        // Якщо все успішно, закриваємо форму
         setIsEditing(false);
       }
     } catch (error) {
@@ -368,7 +366,14 @@ export default function JobApplicationCard({
                 className="cursor-pointer hover:bg-primary/90"
                 disabled={loading}
               >
-                {loading ? <Loader /> : "Save Changes"}
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <Loader />
+                    <p className="ml-2">Saving changes...</p>
+                  </div>
+                ) : (
+                  "Save Changes"
+                )}
               </Button>
             </DialogFooter>
           </form>

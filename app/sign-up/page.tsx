@@ -132,7 +132,14 @@ export default function SignUp() {
               className="w-full bg-primary cursor-pointer py-4 hover:bg-primary/90"
               disabled={loading}
             >
-              {loading ? <Loader /> : "Sign Up"}
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <Loader />
+                  <p className="ml-2">Signing Up...</p>
+                </div>
+              ) : (
+                "Sign Up"
+              )}
             </Button>
             <p>
               Already have an account?{" "}
