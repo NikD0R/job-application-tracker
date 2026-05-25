@@ -109,21 +109,6 @@ function DroppableColumn({
               {column.name}
             </CardTitle>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger>
-              <div
-                className={`${buttonVariants({ variant: "ghost", size: "icon" })} cursor-pointer h-6 w-6 text-white hover:bg-white/20`}
-              >
-                <MoreVertical className="h-4 w-4" />
-              </div>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem className="text-destructive cursor-pointer">
-                <Trash2 className="mr-2 h-4 w-4" />
-                Delete Column
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </div>
       </CardHeader>
       <CardContent
