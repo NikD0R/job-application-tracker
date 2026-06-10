@@ -1,9 +1,11 @@
 import ImageTabs from "@/components/image-tabs";
 import { Button } from "@/components/ui/button";
+import { getSession } from "@/lib/auth/auth";
 import { ArrowRight, Briefcase, CheckCircle2, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getSession();
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <main className="flex-1">
@@ -17,7 +19,7 @@ export default function Home() {
               Capture, organize, and manage your job search in one place.
             </p>
             <div className="flex flex-col items-center gap-4">
-              <Link href="/sign-up">
+              <Link href={session?.user ? "/dashboard" : "/sign-up"}>
                 <Button
                   size="lg"
                   className="h-12 px-8 text-lg font-medium cursor-pointer hover:bg-primary/90"
