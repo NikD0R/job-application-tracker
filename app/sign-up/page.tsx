@@ -53,13 +53,13 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
+    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md border-gray-200 shadow-lg">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-black">
+          <CardTitle className="text-2xl font-bold text-foreground">
             Sign Up
           </CardTitle>
-          <CardDescription className="text-gray-600">
+          <CardDescription className="text-muted-foreground">
             Create an account to start tracking your job applications
           </CardDescription>
         </CardHeader>
@@ -76,7 +76,7 @@ export default function SignUp() {
             <div className="space-y-2">
               <Label
                 htmlFor="name"
-                className="text-gray-700"
+                className="text-foreground"
               >
                 Name
               </Label>
@@ -93,7 +93,7 @@ export default function SignUp() {
             <div className="space-y-2">
               <Label
                 htmlFor="email"
-                className="text-gray-700"
+                className="text-foreground"
               >
                 Email
               </Label>
@@ -110,7 +110,7 @@ export default function SignUp() {
             <div className="space-y-2">
               <Label
                 htmlFor="password"
-                className="text-gray-700"
+                className="text-foreground"
               >
                 Password
               </Label>
@@ -141,7 +141,7 @@ export default function SignUp() {
                 "Sign Up"
               )}
             </Button>
-            <p>
+            <p className="text-muted-foreground">
               Already have an account?{" "}
               <Link
                 href="/sign-in"
